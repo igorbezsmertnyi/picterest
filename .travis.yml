@@ -2,6 +2,9 @@ language: ruby
 rvm:
  - 2.3.3
 
+before_script:
+  - psql -c 'create database picterest_test;' -U postgres
+
 deploy:
   provider: heroku
   api_key: $HEROKU_AUTH_TOKEN
