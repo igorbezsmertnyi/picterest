@@ -1,2 +1,8 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import './vars';
+@import './grid';
+
+@import './pages/home';
+
+@import './partials/header';

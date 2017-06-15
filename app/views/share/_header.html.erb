@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="header__title">
+    <strong>
+      <%= link_to 'Picterest', root_path %>
+    </strong>
+  </div>
+  <div class="header__menu">
+    <div class="header__menu__container">
+      <!-- <%= link_to 'Home', root_path, class: 'header__menu__container__item' %>
+      <%= link_to 'About', about_path, class: 'header__menu__container__item' %>
+      <%= link_to 'Contact', contact_path, class: 'header__menu__container__item' %>
+      <%= link_to 'FAQ', faq_path, class: 'header__menu__container__item' %> -->
+      <% if user_signed_in? %>
+        <%= link_to logout_path, class: 'header__menu__container__item' do %>
+          Log Out
+          <span class="glyphicon glyphicon-log-out"></span>
+        <% end %>
+      <% else %>
+        <%= link_to login_path, class: 'header__menu__container__item' do %>
+          Log In
+          <span class="glyphicon glyphicon-log-in"></span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</header>

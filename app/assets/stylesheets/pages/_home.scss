@@ -1,0 +1,36 @@
+.home-page {
+  height: calc(100vh - 70px);
+
+  &__container {
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    left: 0;
+    background: $cloud;
+    padding: 20px 40px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+
+    &__title {
+      margin-top: -160px;
+
+      h1 {
+        font-size: 72px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+    }
+
+    &__links {
+      width: 297px;
+    }
+  }
+}

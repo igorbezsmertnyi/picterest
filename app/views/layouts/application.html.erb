@@ -9,7 +9,15 @@
   </head>
 
   <body>
-    <%= render 'share/nav_bar' %>
-    <%= yield %>
+    <%= render 'share/header' %>
+    <div id="app-container" class="container">
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= msg %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
