@@ -1,0 +1,83 @@
+.pic-form {
+  padding-top: 35px;
+
+  h2 {
+    margin: 15px 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.pics {
+  &__container {
+    &__list {
+      margin: 20px -15px 0;
+      display: flex;
+      flex-flow: row wrap;
+
+      &__item {
+        position: relative;
+        width: calc((100% / 3) - 30px);
+        margin: 0 15px;
+        height: 350px;
+        border-radius: 20px;
+        padding: 15px;
+        border: 1px solid transparentize($wet-asphalt, 0.8);
+        box-shadow: 5px 10px 7px transparentize($wet-asphalt, 0.8);
+
+        &__action-btn {
+          display: flex;
+          justify-content: flex-end;
+
+          a {
+            margin: 0 4px;
+          }
+
+          span:hover {
+            color: $purple;
+          }
+        }
+      }
+    }
+  }
+
+  &__new-pic-btn {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: transparentize($purple, 0.5);
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    margin-top: 90px;
+    margin-right: 25px;
+
+    a {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        content: "\002b";
+        position: absolute;
+        font-size: 32px;
+        color: #fff;
+      }
+
+      &:hover {
+        background-color: transparentize($alizarin, 0.5);
+
+        &::before {
+          color: #000;
+        }
+      }
+    }
+  }
+}

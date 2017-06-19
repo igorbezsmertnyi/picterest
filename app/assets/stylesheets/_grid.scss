@@ -2,6 +2,14 @@
   margin-top: 70px;
 }
 
+a {
+  color: $wet-asphalt;
+
+  &:hover {
+    color: $wet-asphalt;
+  }
+}
+
 .alert {
   width: 100vw;
   position: absolute;

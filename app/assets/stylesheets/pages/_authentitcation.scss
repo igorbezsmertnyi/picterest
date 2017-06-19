@@ -1,0 +1,13 @@
+.registration-form,
+.login-form {
+  padding-top: 35px;
+
+  h2 {
+    margin: 15px 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+}

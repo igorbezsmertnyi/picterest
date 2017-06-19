@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   username: igor
-  password:
+  password: 'pass'
   database: picterest_development
 
   # The specified database role being used to connect to postgres.
