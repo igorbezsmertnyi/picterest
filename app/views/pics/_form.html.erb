@@ -20,13 +20,19 @@
     </div>
 
     <div class="form-group">
+      <%= form.label :image, class: 'col-sm-2' %>
+      <div class="col-sm-12">
+        <%= form.file_field :image, id: 'image' %>
+      </div>
+    </div>
+
+    <div class="form-group">
       <div class="col-sm-10">
         <% if params[:action].eql? 'new' %>
           <%= form.submit "Create", class: 'btn btn-default' %>
         <% else %>
           <%= form.submit "Submit", class: 'btn btn-default' %>
         <% end %>
-
       </div>
     </div>
   <% end %>

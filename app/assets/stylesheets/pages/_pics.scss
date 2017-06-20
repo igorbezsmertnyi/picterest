@@ -22,17 +22,43 @@
         position: relative;
         width: calc((100% / 3) - 30px);
         margin: 0 15px;
-        height: 350px;
+        height: 450px;
         border-radius: 20px;
         padding: 15px;
         border: 1px solid transparentize($wet-asphalt, 0.8);
         box-shadow: 5px 10px 7px transparentize($wet-asphalt, 0.8);
+        overflow: hidden;
+
+        &__image {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &__overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: -moz-linear-gradient(top, rgba(63,63,63,0.5) 0%, rgba(63,63,63,0) 29%, rgba(63,63,63,0) 72%, rgba(63,63,63,0.5) 100%);
+            background: -webkit-linear-gradient(top, rgba(63,63,63,0.5) 0%,rgba(63,63,63,0) 29%,rgba(63,63,63,0) 72%,rgba(63,63,63,0.5) 100%);
+            background: linear-gradient(to bottom, rgba(63,63,63,0.5) 0%,rgba(63,63,63,0) 29%,rgba(63,63,63,0) 72%,rgba(63,63,63,0.5) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#803f3f3f', endColorstr='#803f3f3f',GradientType=0 );
+          }
+        }
 
         &__action-btn {
           display: flex;
           justify-content: flex-end;
 
           a {
+            color: #fff;
             margin: 0 4px;
           }
 

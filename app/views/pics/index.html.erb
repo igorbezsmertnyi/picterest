@@ -6,6 +6,10 @@
       <div class="pics__container__list">
         <% @pics.each do |pic| %>
           <div class="pics__container__list__item">
+            <div class="pics__container__list__item__image">
+              <div class="pics__container__list__item__image__overlay"></div>
+              <%= image_tag(pic.image.url(:medium)) %>
+            </div>
             <% if current_user.id.eql? pic.user_id %>
               <div class="pics__container__list__item__action-btn">
                 <%= link_to edit_pic_path(pic) do %>
