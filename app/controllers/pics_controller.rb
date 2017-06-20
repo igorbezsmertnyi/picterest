@@ -1,5 +1,7 @@
 class PicsController < ApplicationController
   before_action :set_pic, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, expect: [:index, :show]
+  before_action :correct_user, only: [:edit, :upadate, :destroy]
 
   # GET /pics
   # GET /pics.json
@@ -14,7 +16,7 @@ class PicsController < ApplicationController
 
   # GET /pics/new
   def new
-    @pic = Pic.new
+    @pic = current_user.pics.new
   end
 
   # GET /pics/1/edit
@@ -24,7 +26,7 @@ class PicsController < ApplicationController
   # POST /pics
   # POST /pics.json
   def create
-    @pic = Pic.new(pic_params)
+    @pic = current_user.pics.new(pic_params)
 
     respond_to do |format|
       if @pic.save
@@ -70,5 +72,11 @@ class PicsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pic_params
       params.require(:pic).permit(:description)
+    end
+
+    def correct_user
+      @pic = current_user.pics.find_by(id: params[:id])
+
+      redirect_to pics_path if @pic.nil?
     end
 end

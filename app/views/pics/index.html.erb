@@ -6,14 +6,16 @@
       <div class="pics__container__list">
         <% @pics.each do |pic| %>
           <div class="pics__container__list__item">
-            <div class="pics__container__list__item__action-btn">
-              <%= link_to edit_pic_path(pic) do %>
-                <span class="glyphicon glyphicon-pencil"></span>
-              <% end %>
-              <%= link_to pic, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <span class="glyphicon glyphicon-remove"></span>
-              <% end %>
-            </div>
+            <% if current_user.id.eql? pic.user_id %>
+              <div class="pics__container__list__item__action-btn">
+                <%= link_to edit_pic_path(pic) do %>
+                  <span class="glyphicon glyphicon-pencil"></span>
+                <% end %>
+                <%= link_to pic, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span class="glyphicon glyphicon-remove"></span>
+                <% end %>
+              </div>
+            <% end %>
             <%= link_to(pic) do %>
               <p><%= pic.description %></p>
             <% end %>
