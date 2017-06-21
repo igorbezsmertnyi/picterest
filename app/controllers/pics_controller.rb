@@ -44,8 +44,7 @@ class PicsController < ApplicationController
   def update
     respond_to do |format|
       if @pic.update(pic_params)
-        format.html { redirect_to @pic, notice: 'Pic was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pic }
+        format.html { redirect_to pics_path }
       else
         format.html { render :edit }
         format.json { render json: @pic.errors, status: :unprocessable_entity }

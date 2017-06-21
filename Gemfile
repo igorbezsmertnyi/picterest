@@ -19,6 +19,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.3.0'
 gem 'paperclip', '~> 5.1.0'
 gem 'aws-sdk'
+gem "sprockets", "~> 4.x"
+gem "babel-schmooze-sprockets"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

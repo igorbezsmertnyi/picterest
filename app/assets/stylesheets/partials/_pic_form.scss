@@ -1,1 +1,56 @@
+.form-container {
+  margin-top: 25px;
 
+  &__form {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &__part {
+    width: 50%;
+    padding-left: 15px;
+  }
+
+  &__dropdown {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    outline: 2px dashed $purple;
+    background-color: transparentize(#eee, 0.7);
+    transition: ease-in-out 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--active {
+      transition: ease-in-out 0.3s;
+      outline-offset: -10px;
+    }
+
+    label {
+      color: $purple;
+      font-size: 24px;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 5px;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input {display: none;}
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
