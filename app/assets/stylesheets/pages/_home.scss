@@ -7,18 +7,39 @@
     height: calc(100vh - 70px);
     left: 0;
     background: $cloud;
-    padding: 20px 40px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
 
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    &__overlay {
+      position: absolute;
+      background-color: #000;
+      opacity: 0.4;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
     &__title {
-      margin-top: -160px;
+      position: relative;
+      margin-top: -100px;
+      z-index: 2;
 
       h1 {
         font-size: 72px;
         margin-bottom: 10px;
+        color: #fff;
       }
 
       p {
@@ -26,6 +47,7 @@
         letter-spacing: 2px;
         font-size: 20px;
         margin-bottom: 25px;
+        color: #fff;
       }
     }
 

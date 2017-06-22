@@ -21,7 +21,7 @@
       &__item {
         position: relative;
         width: calc((100% / 3) - 30px);
-        margin: 0 15px;
+        margin: 15px;
         height: 450px;
         border-radius: 20px;
         padding: 15px;
@@ -65,6 +65,39 @@
           span:hover {
             color: $purple;
           }
+        }
+      }
+    }
+
+    &__pagination {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+
+      .pagination {
+        min-width: 70px;
+        display: flex;
+        align-items: center;
+      }
+
+      .current {
+        font-size: 20px;
+        color: $purple;
+      }
+
+      .next_page,
+      .previous_page {
+        font-size: 12px !important;
+        margin: 0 7px;
+      }
+
+      a {
+        font-size: 18px;
+        margin: 0 7px;
+
+        &:hover {
+          color: $purple;
         }
       }
     }

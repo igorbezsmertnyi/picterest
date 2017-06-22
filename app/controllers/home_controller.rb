@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @pic_bg = Pic.last.image
   end
 
   def about

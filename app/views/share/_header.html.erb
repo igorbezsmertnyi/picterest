@@ -4,15 +4,19 @@
       <%= link_to 'Picterest', root_path %>
     </strong>
   </div>
+  <div class="header__menu header__menu--full">
+    <div class="header__menu__container header__menu--full__container">
+      <%= link_to 'Pics', pics_path, class: 'header__menu__container__item' %>
+      <% if user_signed_in? %>
+        <%= link_to 'CREATE NEW PIC', new_pic_path, class: 'header__menu__container__item' %>
+      <% end %>
+    </div>
+  </div>
   <div class="header__menu">
     <div class="header__menu__container">
-      <!-- <%= link_to 'Home', root_path, class: 'header__menu__container__item' %>
-      <%= link_to 'About', about_path, class: 'header__menu__container__item' %>
-      <%= link_to 'Contact', contact_path, class: 'header__menu__container__item' %>
-      <%= link_to 'FAQ', faq_path, class: 'header__menu__container__item' %> -->
       <% if user_signed_in? %>
+        <p><%= current_user.name %></p>
         <%= link_to logout_path, class: 'header__menu__container__item' do %>
-          Log Out
           <span class="glyphicon glyphicon-log-out"></span>
         <% end %>
       <% else %>

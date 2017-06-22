@@ -8,6 +8,8 @@
   justify-content: space-between;
   border-bottom: 1px solid transparentize($wet-asphalt, 0.9);
   padding: 0 20px;
+  background-color: #fff;
+  z-index: 100;
 
   &__title {
     font-size: 24px;
@@ -28,6 +30,15 @@
   }
 
   &__menu {
+    &--full {
+      width: 80%;
+
+      &__container {
+        padding: 25px;
+        justify-content: flex-start !important;
+      }
+    }
+
     &__container {
       width: 100%;
       height: 100%;

@@ -4,7 +4,7 @@
       <h1 class="text-center">Pics</h1>
       <div class="pics__container__list">
         <% @pics.each do |pic| %>
-          <%= link_to edit_pic_path(pic) do %>
+          <%= link_to pic_path(pic) do %>
             <div class="pics__container__list__item">
               <div class="pics__container__list__item__image">
                 <div class="pics__container__list__item__image__overlay"></div>
@@ -26,6 +26,10 @@
             </div>
           <% end %>
         <% end %>
+      </div>
+
+      <div class="pics__container__pagination">
+        <%= will_paginate @pics %>
       </div>
     </div>
   </div>

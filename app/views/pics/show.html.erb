@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @pic.description %>
-</p>
-
-<%= link_to 'Edit', edit_pic_path(@pic) %> |
-<%= link_to 'Back', pics_path %>
+<div class="pic-form">
+  <div class="row pic-form__container">
+    <div class="col-sm-8">
+      <h1 class="text-center"><%= @pic.description %></h1>
+      <em>Author: <%= @pic.user.name %></em>
+      <div class="img-show">
+        <%= image_tag(@pic.image.url(:medium), class: 'inserted-img') %>
+      </div>
+    </div>
+  </div>
+</div>
