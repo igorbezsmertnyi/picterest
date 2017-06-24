@@ -1,18 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-def seed_image(file_name)
-  if Rails.env.development?
-    assets_path = "/app/assets/images/seed/"
-  else
-    assets_path = "/assets/image/seed/"
-  end
+require "open-uri"
 
-  File.open(File.join(Rails.root, "#{assets_path}#{file_name}.jpg"))
+def seed_image(file_name)
+  open("https://s3.eu-central-1.amazonaws.com/picterest-images/static-assets/#{file_name}.jpg")
 end
 
 pics = [
