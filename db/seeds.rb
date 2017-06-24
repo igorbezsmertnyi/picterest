@@ -1,5 +1,3 @@
-require "open-uri"
-
 def seed_image(file_name)
   open("https://s3.eu-central-1.amazonaws.com/picterest-images/static-assets/#{file_name}.jpg")
 end
