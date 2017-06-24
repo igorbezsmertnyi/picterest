@@ -49,13 +49,10 @@ pics = [
   { description: 'dolerem ipsum' },
   { description: 'consectetur adipiscing elit' },
   { description: 'ed accumsan neque erat' },
-  { description: 'in pretium ipsum sollicitudin ac' },
-  { description: 'lorem ipsum' }
+  { description: 'in pretium ipsum sollicitudin ac' }
 ]
 
-# binding.pry_remote
-
-pics.each_with_index do |attributes, i|
-  attributes[:image] = seed_image(i + 1) if i + 1 <= pics.size - 1
+pics.each.with_index do |attributes, i|
+  attributes[:image] = seed_image(i + 1)
   User.first.pics.create(attributes)
 end
